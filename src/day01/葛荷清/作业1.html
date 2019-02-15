@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div id="wrap" class="wrap"><span></span></div> -->
+    <script>
+        // function creatElement(obj) {
+        //     let {
+        //         tag,
+        //         props,
+        //         children
+        //     } = obj;
+        //     let node = document.createElement(tag);
+        //     if (props) {
+        //         Object.keys(props).map(function(item) {
+        //             node.setAttribute(item, props[item]);
+        //         })
+        //     }
+        //     if (children) {
+        //         children.map(function(item) {
+        //             let childrennode;
+        //             if (typeof item === 'string') {
+        //                 childrennode = document.createTextNode(item);
+        //             } else {
+        //                 childrennode = creatElement(item);
+
+        //             }
+        //             node.appendChild(childrennode);
+        //         })
+        //     }
+
+        //     return node;
+        // }
+        // console.log(creatElement({
+        //     tag: 'div',
+        //     props: {
+        //         id: 'wrap',
+        //         classname: 'wrap'
+        //     },
+        //     children: [{
+        //         tag: 'span'
+        //     }, 'hello']
+        // }))
+        //////////
+        let obj = {
+            name: 'zs',
+            age: 13
+        }
+
+        function cArr(ops) {
+            return Object.entries(ops).map(function(item) {
+                return item.join('=');
+            }).join('&');
+        }
+        console.log(cArr(obj));
+    </script>
+</body>
+
+</html>

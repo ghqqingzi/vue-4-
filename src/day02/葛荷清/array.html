@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .wrap {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        
+        .wrap div {
+            width: 40px;
+            height: 40px;
+            background: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div></div>
+    </div>
+    <script>
+        // let box = Array.from(document.querySelectorAll('div'), function(item) {
+        //     item.onclick = function() {
+        //         alert(111);
+        //     }
+        //     return item;
+        // })
+        // console.log(box);
+        // let arr = [1, 2, 3, 4, 5];
+        // let arr1 = arr.entries();
+        // for (let val of arr1) {
+        //     console.log(val);
+        // }
+        let arr = ['a', 'b', 'c'];
+
+        function getInt(arrs) {
+            let index = 0;
+            return {
+                next: function() {
+                    return {
+                        value: arr[index++],
+                        done: index > arr.length
+                    }
+                }
+            }
+        }
+        let num = getInt(arr);
+        console.log(num.next());
+        console.log(num.next());
+        console.log(num.next());
+        console.log(num.next());
+    </script>
+</body>
+
+</html>

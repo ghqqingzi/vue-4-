@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //let
+        //1、没有变量提升
+        //2、会产生块级作用域，从内向外寻找
+        //3、同一作用域下不能产生相同变量
+        //4、es6明确规定在当前作用域下使用let和const声明变量在该变量之前不允许赋值，会形成一个暂时性死区；
+        // console.log(str);
+        // if (10 > 5) {
+        //     let str = "hello";
+        // }
+
+        // if(10>5){
+        //     let str="qwe";
+        //     console.log(str)
+        // }
+        // if(10>5){
+        //     let str="qwe";
+        //    {
+        //     console.log(str)
+        //    }
+        // }
+
+
+        // let arr = ['a', 'b', 'c'];
+        // if (arr.length === 3) {
+        //     arr = 'zs';
+        //     let arr = ['q', 'w', 'e'];
+        //     console.log(arr); //报错，arr is not defined
+        // }
+
+        // for (let i = 0; i <= arr.length - 1; i++) {
+        //     setTimeout(function() {
+        //         alert(arr[i]);
+        //     })
+        // }
+
+        // const 声明常量，值不能改变
+        // const arr = ['a', 'b', 'c', 'd'];
+        // arr.splice(0, 1);
+        // console.log(arr); //['b','c','d']
+        // arr+=10;
+        // console.log(arr)//报错
+
+        // let [classname, num, date] = ['1610C', 40, '2019-2-12'];
+        // console.log(classname, num, date);
+
+        // let [username, age, [friend1, friend2]] = ['啥啥啥', 20, ['xxx1', 'xxx2']];
+        // console.log(username, age, friend1, friend2);
+        let [title, ...n] = ['求和', 10, 20, 30, 40, 50];
+        let sum = 0;
+        for (let i = 0; i < n.length; i++) {
+            sum += n[i];
+        }
+        n = sum;
+        console.log(title, n);
+    </script>
+</body>
+
+</html>
